@@ -1,0 +1,32 @@
+# Enabling H2 Console
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  messages: 
+    basename: messages
+app:
+  folder:
+    customer: C:/Projects/movies-app/src/main/resources/profiles.json
+    movie: C:/Projects/movies-app/src/main/resources/movies.xml
+  fileType:
+    json: json
+    xml: xml
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    com.santosh.moviesapp: INFO
+    org.hibernate: ERROR
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: C:/Projects/movies-app/logs/application.log
+
+   
