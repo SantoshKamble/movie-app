@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
@@ -40,11 +41,12 @@ public class MovieDataLoaderService {
 
 	public void loadMovieData(String filePath) {
 		logger.info("Loading Movie data from file ",filePath);
-		File file = new File(filePath);
+		//File file = new File(filePath);
 		XmlMapper xmlMapper = new XmlMapper();
 		String xml;
 		try {
-			xml = inputStreamToString(new FileInputStream(file));
+			ClassPathResource resource = new ClassPathResource(filePath);
+			xml = inputStreamToString(resource.getInputStream());
 			TypeReference<List<Movie>> typeReference1 = new TypeReference<List<Movie>>() {
 			};
 			List<Movie> movies = xmlMapper.readValue(xml, typeReference1);

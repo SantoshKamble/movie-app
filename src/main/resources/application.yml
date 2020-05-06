@@ -12,10 +12,14 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
   messages: 
     basename: messages
+  application:
+    name: movies-app
+server:
+  port: 8081
 app:
   folder:
-    customer: C:/Projects/movies-app/src/main/resources/profiles.json
-    movie: C:/Projects/movies-app/src/main/resources/movies.xml
+    customer: profiles.json
+    movie: movies.xml
   fileType:
     json: json
     xml: xml
@@ -27,6 +31,6 @@ logging:
     org.hibernate: ERROR
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-  file: C:/Projects/movies-app/logs/application.log
+  file: C:/Projects/logs/application.log
 
    

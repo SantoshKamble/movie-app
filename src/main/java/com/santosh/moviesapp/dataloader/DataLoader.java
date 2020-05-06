@@ -62,14 +62,7 @@ public class DataLoader implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings)  {
-		logger.info("Loading data...");
-		System.out.println("######" + config.getFolder().getCustomer());
-		System.out.println("######" + config.getFolder().getMovie());
-		System.out.println("######" + config.getFileType().getJson());
-		System.out.println("######" + config.getFileType().getXml());
-		
-
-
+		logger.info("Loading data...");		
 		String customerFilePathString = config.getFolder().getCustomer();
 		String movieFilePathString = config.getFolder().getMovie();
 		
@@ -95,8 +88,6 @@ public class DataLoader implements CommandLineRunner {
 			return true;
 		}
 		else {
-		//	throw new InvalidFileFormatException("Required File format is "+requiredFileType+ "and recived file format" +filePathString );
-			
 			throw new InvalidFileFormatException(messageSource
 			.getMessage("file.format.message" , null,
 					LocaleContextHolder.getLocale()));

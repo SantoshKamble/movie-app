@@ -30,7 +30,6 @@ public class Movie {
 	private long id;
 	private String title ;
 	
-	@JsonProperty( value = "categories" )
 	@JacksonXmlElementWrapper( localName = "actors" )
 	@JacksonXmlProperty( localName = "actor" )
 	@OneToMany(mappedBy="movie" ,cascade =CascadeType.ALL )

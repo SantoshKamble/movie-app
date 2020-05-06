@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -39,22 +40,21 @@ public class CustomerDataLoaderService {
 	}
 
 	public void loadCustomerData(String filePath) {
-		logger.info("Loading customer data from file {} ",filePath);
+		logger.info("Loading customer data from file {} ", filePath);
 		ObjectMapper mapper = new ObjectMapper();
 		TypeReference<List<Customer>> typeReference = new TypeReference<List<Customer>>() {
 		};
-		InputStream inputStream;
 		try {
-			inputStream = new FileInputStream(new File(filePath));
+			ClassPathResource resource = new ClassPathResource(filePath);
+			InputStream inputStream = resource.getInputStream();
+			//inputStream = new FileInputStream(new File(filePath));
 			List<Customer> customers = mapper.readValue(inputStream, typeReference);
 			customerService.save(customers);
 			logger.info("Customers are Saved : {}", customers);
-			System.out.println("Users Saved!");
-			System.out.println("Employee Object\n" + customers);
 		} catch (FileNotFoundException e1) {
-			logger.error("File not found",e1);
+			logger.error("File not found", e1);
 		} catch (IOException e) {
-			logger.error("Unable to save users",e);
+			logger.error("Unable to save users", e);
 		}
 
 	}
