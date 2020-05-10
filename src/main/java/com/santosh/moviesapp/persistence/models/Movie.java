@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.santosh.moviesapp.models;
+package com.santosh.moviesapp.persistence.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 

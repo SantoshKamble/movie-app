@@ -18,10 +18,10 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.santosh.moviesapp.models.Customer;
-import com.santosh.moviesapp.models.Interest;
-import com.santosh.moviesapp.models.Movie;
-import com.santosh.moviesapp.models.MovieRecommendation;
+import com.santosh.moviesapp.persistence.models.Customer;
+import com.santosh.moviesapp.persistence.models.Interest;
+import com.santosh.moviesapp.persistence.models.Movie;
+import com.santosh.moviesapp.persistence.models.MovieRecommendation;
 
 
 /**
@@ -43,9 +43,9 @@ public class MovieRecommendationServiceTest {
 	
 	@Test
 	public void rectrieveMovieRecommendationTest() {		
-		when(customerService.retriveCustomer(Mockito.anyLong())).thenReturn(getCustomerOpt());
+		when(customerService.retrieveCustomer(Mockito.anyLong())).thenReturn(getCustomerOpt());
 		when(movieService.retrieveMovies()).thenReturn(getMovies());		
-		List<MovieRecommendation>	recommendationList = movieRecommendationService.rectrieveMovieRecommendation(1001l);
+		List<MovieRecommendation>	recommendationList = movieRecommendationService.retrieveMovieRecommendation(1001l);
 		Assert.assertTrue(recommendationList.size()==1);
 	}
 	

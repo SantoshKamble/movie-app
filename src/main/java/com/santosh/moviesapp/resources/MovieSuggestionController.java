@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.santosh.moviesapp.models.MovieRecommendation;
+import com.santosh.moviesapp.persistence.models.MovieRecommendation;
 import com.santosh.moviesapp.responses.MovieSuggestionResposne;
 import com.santosh.moviesapp.services.MovieRecommendationService;
 
@@ -49,7 +49,8 @@ public class MovieSuggestionController {
 	@GetMapping(value="v1/movie/suggestion/customer/id/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public MovieSuggestionResposne getMovieSuggestions(@PathVariable("id") long  customerId) {		
 		logger.info("Getting movie Suggestions" );
-		List<MovieRecommendation> movieRecommendations = movieRecommendationService.rectrieveMovieRecommendation(customerId);
+		List<MovieRecommendation> movieRecommendations = movieRecommendationService.retrieveMovieRecommendation(customerId);
+	//	List<MovieRecommendation> movieRecommendations = movieRecommendationService.getMovieRecommendation(customerId);
 		MovieSuggestionResposne movieSuggestionResposne = new MovieSuggestionResposne();
 		movieSuggestionResposne.setMovieRecommendations(movieRecommendations);
 		logger.info("Getting movie Suggestions : {}", movieSuggestionResposne );

@@ -18,9 +18,9 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.santosh.moviesapp.models.Customer;
-import com.santosh.moviesapp.models.Interest;
-import com.santosh.moviesapp.repositories.CustomerRepository;
+import com.santosh.moviesapp.persistence.models.Customer;
+import com.santosh.moviesapp.persistence.models.Interest;
+import com.santosh.moviesapp.persistence.repositories.CustomerRepository;
 
 /**
  * @author santkamb
@@ -41,7 +41,7 @@ public class CustomerServiceTest {
 		
 		Optional<Customer> optCustomer = getCustomerOpt();
 		when(customerRepository.findById(Mockito.anyLong())).thenReturn(optCustomer);
-		Optional<Customer> cust = customerService.retriveCustomer(1001l);
+		Optional<Customer> cust = customerService.retrieveCustomer(1001l);
 		Assert.assertTrue(cust.get().getName().equalsIgnoreCase("abc"));
 	}
 

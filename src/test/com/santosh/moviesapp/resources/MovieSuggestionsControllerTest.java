@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.santosh.moviesapp.MoviesAppApplication;
-import com.santosh.moviesapp.models.MovieRecommendation;
+import com.santosh.moviesapp.persistence.models.MovieRecommendation;
 import com.santosh.moviesapp.responses.MovieSuggestionResposne;
 import com.santosh.moviesapp.services.MovieRecommendationService;
 
@@ -70,7 +70,7 @@ public class MovieSuggestionsControllerTest {
 	@Test
 	public void testGetMovieSuggestions() {
 		List<MovieRecommendation> movieRecommendations = getMovies();
-		when(movieRecommendationService.rectrieveMovieRecommendation(Mockito.anyLong()))
+		when(movieRecommendationService.retrieveMovieRecommendation(Mockito.anyLong()))
 				.thenReturn(movieRecommendations);
 		MovieSuggestionResposne movieSuggestionResposne = movieSuggestionController.getMovieSuggestions(1001);
 		Assert.assertTrue(movieSuggestionResposne.getMovieRecommendations().size() == 1);

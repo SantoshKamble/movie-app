@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.santosh.moviesapp.configuration.FileType;
 import com.santosh.moviesapp.configuration.Folder;
 import com.santosh.moviesapp.configuration.MovieConfig;
-import com.santosh.moviesapp.services.CustomerDataLoaderService;
-import com.santosh.moviesapp.services.MovieDataLoaderService;
+import com.santosh.moviesapp.services.impl.CustomerDataLoaderServiceImpl;
+import com.santosh.moviesapp.services.impl.MovieDataLoaderServiceImpl;
 
 /**
  * @author santkamb
@@ -28,10 +28,10 @@ import com.santosh.moviesapp.services.MovieDataLoaderService;
 public class DataLoaderTest {
 	
 	@Mock
-	private CustomerDataLoaderService customerDataLoader;
+	private CustomerDataLoaderServiceImpl customerDataLoader;
 	
 	@Mock
-	private MovieDataLoaderService movieDataLoader;
+	private MovieDataLoaderServiceImpl movieDataLoader;
 	
 	@Mock
 	private MovieConfig config;

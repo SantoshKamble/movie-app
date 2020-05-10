@@ -10,6 +10,7 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
   messages: 
     basename: messages
   application:
@@ -27,8 +28,11 @@ logging:
   level:
     root: ERROR
     org.springframework.web: ERROR
-    com.santosh.moviesapp: INFO
-    org.hibernate: ERROR
+    com.santosh.moviesapp: trace
+    org.hibernate.SQL: trace
+    org.hibernate.type.descriptor.sql: trace
+    
+    
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   file: C:/Projects/logs/application.log

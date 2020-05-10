@@ -17,8 +17,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
-import com.santosh.moviesapp.models.Movie;
+import com.santosh.moviesapp.persistence.models.Movie;
 
 /**
  * @author santkamb

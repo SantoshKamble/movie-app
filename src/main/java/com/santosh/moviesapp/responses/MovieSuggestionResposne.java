@@ -6,7 +6,7 @@ package com.santosh.moviesapp.responses;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.santosh.moviesapp.models.MovieRecommendation;
+import com.santosh.moviesapp.persistence.models.MovieRecommendation;
 
 /**
  * @author santkamb

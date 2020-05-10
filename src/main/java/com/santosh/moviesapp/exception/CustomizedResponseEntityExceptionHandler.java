@@ -49,6 +49,17 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		HttpHeaders headers = new HttpHeaders();
 			    headers.setContentType(MediaType.APPLICATION_JSON);
 		
+		return new ResponseEntity<>(exceptionResponse,headers, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(MovieRecommendationsNotFoundException.class)
+	public final ResponseEntity<ExceptionResponse> handleMovieRecommendationsNotFoundException(MovieRecommendationsNotFoundException ex,
+			WebRequest request) {
+		ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
+				request.getDescription(false));
+		HttpHeaders headers = new HttpHeaders();
+			    headers.setContentType(MediaType.APPLICATION_JSON);
+		
 		return new ResponseEntity<>(exceptionResponse,headers, HttpStatus.NOT_FOUND);
 	}
 }

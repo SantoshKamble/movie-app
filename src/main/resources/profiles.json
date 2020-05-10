@@ -4,7 +4,8 @@
 		"name": "John",
 		"interests": [
 			{
-				"genres": "Action"
+				"ratings": "10+",
+				"runtime": "< 150 minutes"
 			}
 		]
 	},
@@ -23,8 +24,8 @@
 		"name": "Hans",
 		"interests": [
 			{
-				"gender": "Female",
-				"runtime": "< 110 minutes"
+				
+				"runtime": "< 150 minutes"
 			}
 		]
 	},

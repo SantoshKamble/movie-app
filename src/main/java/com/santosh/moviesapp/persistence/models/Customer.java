@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.santosh.moviesapp.models;
+package com.santosh.moviesapp.persistence.models;
 
 import java.util.ArrayList;
 import java.util.List;
