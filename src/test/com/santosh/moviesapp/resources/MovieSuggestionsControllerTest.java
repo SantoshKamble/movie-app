@@ -28,7 +28,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.santosh.moviesapp.MoviesAppApplication;
 import com.santosh.moviesapp.persistence.models.MovieRecommendation;
-import com.santosh.moviesapp.responses.MovieSuggestionResposne;
+import com.santosh.moviesapp.responses.MovieSuggestionResponse;
 import com.santosh.moviesapp.services.MovieRecommendationService;
 
 
@@ -72,7 +72,7 @@ public class MovieSuggestionsControllerTest {
 		List<MovieRecommendation> movieRecommendations = getMovies();
 		when(movieRecommendationService.retrieveMovieRecommendation(Mockito.anyLong()))
 				.thenReturn(movieRecommendations);
-		MovieSuggestionResposne movieSuggestionResposne = movieSuggestionController.getMovieSuggestions(1001);
+		MovieSuggestionResponse movieSuggestionResposne = movieSuggestionController.getMovieSuggestions(1001);
 		Assert.assertTrue(movieSuggestionResposne.getMovieRecommendations().size() == 1);
 	}
 

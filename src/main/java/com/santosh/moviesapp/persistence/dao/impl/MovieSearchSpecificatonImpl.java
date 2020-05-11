@@ -40,6 +40,10 @@ public class MovieSearchSpecificatonImpl implements MovieSearchSpecification  {
 						Join<Movie, Actor> actors = root.join("actors");
 						predicates.add(cb.equal(actors.get("name"),interest.getActorName()));
 					}
+					if (interest.getActorName() != null && !interest.getGender().isEmpty()) {
+						Join<Movie, Actor> actors = root.join("actors");
+						predicates.add(cb.equal(actors.get("gender"),interest.getGender()));
+					}
 					if (null != interest.getGenres()) {
 						Join<Movie, String> genres = root.join("generes");
 	               	    predicates.add(genres.in(interest.getGenres()));

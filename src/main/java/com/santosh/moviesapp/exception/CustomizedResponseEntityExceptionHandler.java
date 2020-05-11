@@ -20,7 +20,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  *
  */
 @ControllerAdvice
-@RestController 
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(Exception.class)

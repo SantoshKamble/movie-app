@@ -12,7 +12,7 @@ import com.santosh.moviesapp.persistence.models.MovieRecommendation;
  * @author santkamb
  *
  */
-public class MovieSuggestionResposne {
+public class MovieSuggestionResponse {
 	
 	@Override
 	public String toString() {
@@ -38,12 +38,12 @@ public class MovieSuggestionResposne {
 	/**
 	 * @param movieRecommendations
 	 */
-	public MovieSuggestionResposne(List<MovieRecommendation> movieRecommendations) {
+	public MovieSuggestionResponse(List<MovieRecommendation> movieRecommendations) {
 		super();
 		this.movieRecommendations = movieRecommendations;
 	}
 	
-	public MovieSuggestionResposne() {
+	public MovieSuggestionResponse() {
 		
 	}
 

@@ -42,15 +42,26 @@ public class MovieRecommendationServiceImpl implements MovieRecommendationServic
 	
 	private final Logger logger = LoggerFactory.getLogger(MovieRecommendationServiceImpl.class);
 	
-	
-	@Autowired
 	private CustomerService customerService;
-	
-	@Autowired
+		
 	private MovieService movieService;
 	
-	@Autowired
 	private MessageSource messageSource;
+	
+	
+
+	/**
+	 * @param customerService
+	 * @param movieService
+	 * @param messageSource
+	 */
+	public MovieRecommendationServiceImpl(CustomerService customerService, MovieService movieService,
+			MessageSource messageSource) {
+		super();
+		this.customerService = customerService;
+		this.movieService = movieService;
+		this.messageSource = messageSource;
+	}
 
 	@Override
 	public List<MovieRecommendation> retrieveMovieRecommendation(Long customerId) {
