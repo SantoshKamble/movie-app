@@ -16,9 +16,9 @@ Run the application and launch " http://localhost:8081/swagger-ui.html#/"
 2) Data loading can be implemented using Spring Batch because of following reasons 
     a) Data loading should be independent and should be batch job
     b) In case of huge data Spring Batch can be handy
-3) Decoupled this application into microservices architecture
-    a) Data Loader service
-    b) Movie recommendation service 
+3) Decouple this application into microservices architecture
+    a) Data Loader service : can be schedule job which can be run daily/weekly/monthly
+    b) Movie recommendation service : 
    
 
 #Note :
