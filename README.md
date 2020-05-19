@@ -19,6 +19,7 @@ Run the application and launch " http://localhost:8081/swagger-ui.html#/"
 3) Decouple this application into microservices architecture
     a) Data Loader service : can be schedule job which can be run daily/weekly/monthly
     b) Movie recommendation service : 
+4) Write more Junits 
    
 
 #Note :
